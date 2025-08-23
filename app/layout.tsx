@@ -1,25 +1,25 @@
-import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
-import ClerkThemeProvider from '@/components/ClerkThemeProvider';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { ThemeProvider } from '@/contexts/ThemeContext';
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import ClerkThemeProvider from "@/components/ClerkThemeProvider";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 
 const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: 'MoneyBall - Smart Financial Management',
+  title: "MoneyBall - Smart Financial Management",
   description:
-    'AI-powered expense tracking app with intelligent insights, smart categorization, and personalized financial recommendations',
+    "AI-powered expense tracking app with intelligent insights, smart categorization, and personalized financial recommendations",
 };
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
