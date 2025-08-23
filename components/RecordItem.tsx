@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Record } from "@/types/Record";
 import deleteRecord from "@/app/actions/deleteRecord";
+import { format, parse, isValid } from "date-fns";
 
 const getCategoryEmoji = (category: string) => {
   switch (category) {
@@ -20,6 +21,24 @@ const getCategoryEmoji = (category: string) => {
     default:
       return "📦";
   }
+};
+
+const formatRecordDate = (
+  dateInput: string | number | Date | null | undefined
+) => {
+  if (!dateInput) return "No Date";
+
+  let d: Date;
+  if (dateInput instanceof Date) d = dateInput;
+  else d = new Date(dateInput);
+
+  if (isValid(d)) return format(d, "dd/MM/yyyy");
+
+  if (typeof dateInput === "string") {
+    const parsed = parse(dateInput, "dd/MM/yyyy", new Date());
+    if (isValid(parsed)) return format(parsed, "dd/MM/yyyy");
+  }
+  return "Invalid Date";
 };
 
 const RecordItem = ({ record }: { record: Record }) => {
@@ -76,7 +95,7 @@ const RecordItem = ({ record }: { record: Record }) => {
         <div className="space-y-2 sm:space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-xs font-medium text-gray-500 dark:text-gray-400 tracking-wide uppercase">
-              {new Date(record?.date).toLocaleDateString()}
+              {formatRecordDate(record?.date)}
             </span>
             <span className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">
               ₹{record?.amount.toFixed(2)}
