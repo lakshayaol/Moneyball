@@ -1,6 +1,7 @@
 import getRecords from "@/app/actions/getRecords";
 import RecordItem from "./RecordItem";
 import { Record } from "@/types/Record";
+import { format } from "date-fns";
 
 const RecordHistory = async () => {
   const { records, error } = await getRecords();
@@ -87,7 +88,14 @@ const RecordHistory = async () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
         {records.map((record: Record) => (
-          <RecordItem key={record.id} record={record} />
+          <RecordItem
+            key={record.id}
+            record={{
+              ...record,
+              // ✅ Force consistent date formatting here
+              date: format(new Date(record.date), "dd/MM/yyyy"),
+            }}
+          />
         ))}
       </div>
     </div>
