@@ -159,7 +159,7 @@ const BarChart = ({ records }: { records: Record[] }) => {
               item.categories.length > 1
                 ? `Categories: ${item.categories.join(", ")}`
                 : `Category: ${item.categories[0]}`;
-            return [`Total: $${item.amount.toFixed(2)}`, categoriesText];
+            return [`Total: ₹${item.amount.toFixed(2)}`, categoriesText];
           },
         },
       },
@@ -190,7 +190,7 @@ const BarChart = ({ records }: { records: Record[] }) => {
       y: {
         title: {
           display: true,
-          text: "Amount ($)",
+          text: "Amount (₹)",
           font: {
             size: isMobile ? 12 : 16,
             weight: "bold" as const,
@@ -203,7 +203,7 @@ const BarChart = ({ records }: { records: Record[] }) => {
           },
           color: isDark ? "#9ca3af" : "#7f8c8d",
           callback: function (value: string | number) {
-            return "$" + value;
+            return "₹" + value;
           },
         },
         grid: {
