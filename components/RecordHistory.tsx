@@ -92,7 +92,6 @@ const RecordHistory = async () => {
             key={record.id}
             record={{
               ...record,
-              // ✅ Force consistent date formatting here
               date: format(new Date(record.date), "dd/MM/yyyy"),
             }}
           />
