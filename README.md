@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💸 Moneyball — AI-Powered Daily Expense Tracker
 
-## Getting Started
+Moneyball is an **AI-driven** daily expense tracker built with **Next.js**, **TypeScript**, and **Tailwind CSS**. Get smart spending insights, just manage your expenses effortlessly.
 
-First, run the development server:
+---
+
+## 🌟 Features
+
+- 🤖 **AI insights** — Smart recommendations for budgeting and spending habits.
+- ⚡ **Fast & dynamic** with modern frontend architecture.
+- 📱 **Fully responsive** — Seamless experience on mobile, tablet, and desktop.
+- 🌿 **Clean Tailwind UI** — Styled with modular simplicity.
+
+---
+
+## 📁 Project Structure
+
+```plaintext
+.
+├── app/                      # Next.js App Router pages and layouts
+├── components/               # Reusable UI components
+├── contexts/                 # React Context providers (for dark/light theme)
+├── lib/                      # Helper utilities and API functions
+├── prisma/                   # Database schema and ORM setup (Prisma)
+├── public/                   # Static assets (icons, images, fonts)
+├── types/                    # TypeScript type definitions
+├── .gitignore
+├── README.md
+├── middleware.ts             # Custom middleware (for clerk authentication)
+├── next.config.ts
+├── package.json
+├── postcss.config.js
+├── tailwind.config.ts
+└── tsconfig.json
+````
+
+---
+
+## 🛠️ Tech Stack
+
+* **Next.js 14 (App Router)**
+* **TypeScript**
+* **React 18**
+* **Tailwind CSS**
+* **Prisma ORM**
+* **Vercel Hosting**
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/lakshayaol/Moneyball.git
+cd Moneyball
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Set Up Environment Variables
+
+Create a `.env.local` file in the project root and add your database URL and clerk and openrouter API keys accordingly:
+
+```env
+NEXT_PUBLIC_VERCEL_URL=http://localhost:3000
+DATABASE_URL = 
+
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY = 
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL=/
+NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/
+
+OPENROUTER_API_KEY= 
+```
+
+### 4. Run the Development Server
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then visit **`http://localhost:3000`** to view your app live.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧠 How It Works
 
-## Learn More
+1. You input your daily expenses through the UI.
+2. The data is sent to the backend (via fetched API routes or Prisma).
+3. AI logic processes expense patterns and delivers helpful insights.
+4. Insights and expense history are rendered on the frontend for easy tracking and analysis.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 👨‍💻 Developer
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Built with ❤️ by **Lakshay Aol**
 
-## Deploy on Vercel
+* 💼 [LinkedIn](https://www.linkedin.com/in/lakshay-aol/)
+* 🛠️ [GitHub](https://github.com/lakshayaol)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🧾 License
+
+Released under the **MIT License**. Feel free to use, adapt, and contribute!
